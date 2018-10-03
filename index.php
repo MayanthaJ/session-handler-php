@@ -1,4 +1,13 @@
-<?php include('includes/ui/header.php'); ?>
+<?php
+session_start();
+if(isset($_SESSION['isLogged'])){
+    header('Location: send_request.php?response=Session Exist!');
+    exit();
+}
+?>
+<?php 
+include('includes/ui/header.php'); 
+?>
     </head>
     <body>
         <!-- Page Container -->

@@ -12,16 +12,10 @@ class Login{
             $this->setSessionVariables($status);
             return 1;
         }elseif(($this->email==$email)){
-            $status = false;
-            $this->setSessionVariables($status);
             return 2;
         }elseif(($this->password == $password)){
-            $status = false;
-            $this->setSessionVariables($status);
             return 3;
         }else{
-            $status = false;
-            $this->setSessionVariables($status);
             return 4;
         }
     } 
@@ -29,8 +23,12 @@ class Login{
     function setSessionVariables($status){
         if($status==true){
             $_SESSION['isLogged']=true;
-        }else{
-            $_SESSION['isLogged']=false;
+            $_SESSION['csrf_token'] = md5(uniqid(rand(), TRUE));
+
+            $cookie_name = "SessionHandlerAuth";
+            $cookie_value =session_id();
+            $_SESSION['cookie_value'] =$cookie_value;
+            setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
         }
     }
 

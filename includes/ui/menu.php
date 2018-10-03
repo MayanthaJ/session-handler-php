@@ -1,14 +1,32 @@
  <?php
     if(isset($_GET['response'])){
-        if($_GET['response']=="success"){
+        if($_GET['response']=="Login Success!"){
             ?>
-                 <div style="background-color:#2ecc71; color:#FFF; padding:5px;">
+                 <div class="text-center" style="background-color:#2ecc71; color:#FFF; padding:5px;">
+                    <?php echo $_GET['response']; ?>
+                </div>
+            <?php
+        }elseif($_GET['response']=="Session Exist!"){
+            ?>
+                 <div class="text-center" style="background-color:#0984e3; color:#FFF; padding:5px;">
+                    <?php echo $_GET['response']; ?>
+                </div>
+            <?php
+        }elseif($_GET['response']=="Request Successfully Sent! Token Matched."){
+            ?>
+                 <div class="text-center" style="background-color:#16a085; color:#FFF; padding:5px;">
+                    <?php echo $_GET['response']; ?>
+                </div>
+            <?php
+        }elseif($_GET['response']=="Request Sending Failed! Token Miss-Match."){
+            ?>
+                 <div class="text-center" style="background-color:#f39c12; color:#FFF; padding:5px;">
                     <?php echo $_GET['response']; ?>
                 </div>
             <?php
         }else{
             ?>
-                 <div style="background-color:#e74c3c; color:#FFF; padding:5px;">
+                 <div class="text-center" style="background-color:#e74c3c; color:#FFF; padding:5px;">
                     <?php echo $_GET['response']; ?>
                 </div>
             <?php
@@ -20,7 +38,7 @@
  <header>
                 <div class="container">
                     <!-- Site Logo -->
-                    <a href="index.html" class="site-logo">
+                    <a href="index.php" class="site-logo">
                         <i class="gi gi-flash"></i> <strong>Session</strong>Handler
                     </a>
                     <!-- Site Logo -->

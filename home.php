@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['isLogged'])){
+    header('Location: send_request.php?response=Session Exist!');
+    exit();
+}
+?>
 <?php include('includes/ui/header.php'); ?>
     </head>
     <body>
@@ -10,8 +17,8 @@
             <!-- Intro -->
             <section class="site-section site-section-light site-section-top themed-background-dark">
                 <div class="container">
-                    <h1 class="text-center animation-slideDown"><i class="fa fa-arrow-right"></i> <strong>Log In</strong></h1>
-                    <h2 class="h3 text-center animation-slideUp">Connect to your dashboard!</h2>
+                    <h1 class="text-center animation-slideDown"><strong>Home</strong></h1>
+                    <h2 class="h3 text-center animation-slideUp">Please login to access your dashboard.</h2>
                 </div>
             </section>
             <!-- END Intro -->
@@ -22,7 +29,7 @@
                     <div class="row"  style="margin-top:60px; margin-bottom:120px;">
                         <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 site-block">
                             <!-- Log In Form -->
-                            <form action="login.html" method="post" id="form-log-in" class="form-horizontal">
+                            <form action="includes/action/login_action.php"  method="post" id="form-log-in" class="form-horizontal">
                                 <div class="form-group">
                                     <div class="col-xs-12">
                                         <div class="input-group">

@@ -12,13 +12,13 @@ if(isset($_POST['login-email']) && isset($_POST['login-password'])){
         header("Location: ../../send_request.php?response=Login Success!");
         exit;
     }elseif($res==2){
-        header("Location: ../../send_request.php?response=Error! Check your password.");
+        header("Location: ../../index.php?response=Error! Check your password.");
         exit;
     }elseif($res==3){
-        header("Location: ../../send_request.php?response=Error! Check your email.");
+        header("Location: ../../index.php?response=Error! Check your email.");
         exit;
     }elseif($res==4){
-        header("Location: ../../send_request.php?response=Error! Check your email and password.");
+        header("Location: ../../index.php?response=Error! Check your email and password.");
         exit;
     }
 }else{
