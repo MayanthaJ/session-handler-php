@@ -1,3 +1,21 @@
+ <?php
+    if(isset($_GET['response'])){
+        if($_GET['response']=="success"){
+            ?>
+                 <div style="background-color:#2ecc71; color:#FFF; padding:5px;">
+                    <?php echo $_GET['response']; ?>
+                </div>
+            <?php
+        }else{
+            ?>
+                 <div style="background-color:#e74c3c; color:#FFF; padding:5px;">
+                    <?php echo $_GET['response']; ?>
+                </div>
+            <?php
+        }
+    }
+ ?>
+
  <!-- Site Header -->
  <header>
                 <div class="container">
@@ -29,9 +47,21 @@
                             <li>
                                 <a href="home.php">HOME</a>
                             </li>
-                            <li>
-                                <a href="login.oho" class="btn btn-primary">Log In</a>
-                            </li>
+                            <?php 
+                                if(isset($_SESSION['isLogged'])){
+                                    ?>
+                                        <li>
+                                            <a href="logout.php" class="btn btn-primary">Log Out</a>
+                                        </li>
+                                    <?php
+                                }else{
+                                    ?>
+                                        <li>
+                                            <a href="index.php" class="btn btn-primary">Log In</a>
+                                        </li>
+                                    <?php
+                                }
+                            ?>
                         </ul>
                         <!-- END Main Menu -->
                     </nav>
