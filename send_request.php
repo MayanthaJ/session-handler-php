@@ -37,12 +37,11 @@ if(!isset($_SESSION['isLogged'])){
             </section>
             <!-- END Intro -->
 
-            <!-- Log In -->
             <section class="site-content site-section"> 
                 <div class="container">
                     <div class="row"  style="margin-top:60px; margin-bottom:120px;">
                         <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 site-block">
-                            <!-- Log In Form -->
+                           
                             <form action="includes/action/request_send_action.php" method="post" id="form-log-in" class="form-horizontal">
                                 <div class="form-group">
                                     <div class="col-xs-12">

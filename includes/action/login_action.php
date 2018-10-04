@@ -2,8 +2,10 @@
 include('../class/login.php');
 
 if(isset($_POST['login-email']) && isset($_POST['login-password'])){
+    
     $loginemail=$_POST['login-email'];
     $loginpassword=$_POST['login-password'];
+
     $Login = new Login;
 
     $res = $Login->auth($loginemail,$loginpassword);
